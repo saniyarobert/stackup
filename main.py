@@ -1,14 +1,7 @@
 from flask import Flask, render_template
 from datetime import datetime, timedelta
-from flask_sqalchemy import flask_SQLAlchemy
-
-db=flask_SQLAlchemy()
-DB_NAME = "database.db"
-
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-db.main_app(app)
 
 @app.route('/')
 def home():
